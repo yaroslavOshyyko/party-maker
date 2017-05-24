@@ -1,4 +1,4 @@
-// import { ProfileComponent } from './../pages/profile/profile.component';
+import { ProfileComponent } from './../pages/profile/profile.component';
 import { Component, ViewChild } from '@angular/core';
 
 import { Platform, MenuController, Nav } from 'ionic-angular';
@@ -34,7 +34,7 @@ export class MyApp {
       { title: 'Hello Ionic', component: HelloIonicPage },
       { title: 'My First List', component: ListPage },
       { title: 'Events map', component: EventsMapPage },
-      // { title: 'My profile', component: ProfileComponent}
+      { title: 'My profile', component: ProfileComponent}
     ];
   }
 

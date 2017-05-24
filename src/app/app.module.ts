@@ -1,3 +1,6 @@
+import { FacebookService } from 'ng2-facebook-sdk';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { ProfileInfoComponent } from './../pages/profile-info/profile-info.component';
 import { ProfileComponent } from './../pages/profile/profile.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
@@ -13,6 +16,16 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SharedModule } from '../shared/shared.module';
 import { AgmCoreModule, AgmMap, AgmMarker, AgmCircle } from "@agm/core";
+import { AngularFireModule } from "angularfire2";
+
+const config = {
+  apiKey: "AIzaSyB8ZSdRKa-a93cJL3QfUldbD_OifHMC24U",
+  authDomain: "partymaker-8826f.firebaseapp.com",
+  databaseURL: "https://partymaker-8826f.firebaseio.com",
+  projectId: "partymaker-8826f",
+  storageBucket: "partymaker-8826f.appspot.com",
+  messagingSenderId: "830538018323"
+};
 
 @NgModule({
   declarations: [
@@ -21,7 +34,8 @@ import { AgmCoreModule, AgmMap, AgmMarker, AgmCircle } from "@agm/core";
     ItemDetailsPage,
     EventsMapPage,
     ListPage,
-    ProfileComponent
+    ProfileComponent,
+    ProfileInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +43,8 @@ import { AgmCoreModule, AgmMap, AgmMarker, AgmCircle } from "@agm/core";
     SharedModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyD1S_k3L8rHB30x74jllJZ4rGDG2V8dMGI'
-    })
+    }),
+    AngularFireModule.initializeApp(config)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -38,12 +53,15 @@ import { AgmCoreModule, AgmMap, AgmMarker, AgmCircle } from "@agm/core";
     ItemDetailsPage,
     EventsMapPage,
     ListPage,
-    ProfileComponent
+    ProfileComponent,
+    ProfileInfoComponent
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AngularFireAuth,
+    FacebookService
   ],
   exports: [
     AgmMap,
