@@ -1,3 +1,4 @@
+import { NavController, NavParams } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { DatabaseService } from '../../shared/serivces/database.service';
 import { Component, OnInit, Input } from '@angular/core';
@@ -18,9 +19,10 @@ export class EventsInfoComponent implements OnInit {
   public isFacebookEvent = false;
 
   constructor(private dbService: DatabaseService, private auth: AngularFireAuth,
-              private fb: FacebookService, private authService: AuthService) { }
+              private fb: FacebookService, private authService: AuthService, private navParams: NavParams) { }
 
   ngOnInit() {
+    console.log(this.navParams.get('eventId'));
         // this.dbService.getValue(`events/${this.eventId}`).map( event => {
         //   event.eventId = this.eventId;
         //   this.event = event;
