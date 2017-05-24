@@ -1,3 +1,4 @@
+import { ProfileComponent } from './../pages/profile/profile.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -10,7 +11,7 @@ import { EventsMapPage } from '../pages/events-map/events-map';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-// import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -18,12 +19,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HelloIonicPage,
     ItemDetailsPage,
     EventsMapPage,
-    ListPage
+    ListPage,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
-    // SharedModule
+    IonicModule.forRoot(MyApp),
+    SharedModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -31,7 +33,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HelloIonicPage,
     ItemDetailsPage,
     EventsMapPage,
-    ListPage
+    ListPage,
+    ProfileComponent
   ],
   providers: [
     StatusBar,
