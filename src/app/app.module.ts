@@ -10,6 +10,7 @@ import { EventsMapPage } from '../pages/events-map/events-map';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { AgmCoreModule, AgmMap, AgmMarker, AgmCircle } from "@agm/core";
 // import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
@@ -22,7 +23,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyD1S_k3L8rHB30x74jllJZ4rGDG2V8dMGI'
+    })
     // SharedModule
   ],
   bootstrap: [IonicApp],
@@ -37,6 +41,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
+  ],
+  exports: [
+    AgmMap,
+    AgmMarker,
+    AgmCircle
   ]
 })
 export class AppModule {}
