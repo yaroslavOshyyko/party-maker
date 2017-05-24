@@ -1,42 +1,28 @@
-<!--<md-card class="profile">
-      <md-card-header>
-        <div md-card-avatar class="example-header-image"></div>
-        <md-card-title>{{currentUser.displayName}}</md-card-title>
-        <md-card-subtitle>{{currentUser.email}}</md-card-subtitle>
-        <md-card-subtitle>Logged with: {{currentUser.providerData[0].providerId}}</md-card-subtitle>
-        <md-slide-toggle [checked]="theme" (change)="changeColorScheme($event)">Dark scheme</md-slide-toggle>
-      </md-card-header>
-      <img class="profile--img" md-card-image [src]="currentUser.photoURL">
-      <md-card-content>
-        <p>
-          The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-          A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-          bred for hunting.
-        </p>
-      </md-card-content>
-    </md-card>-->
 <ion-header>
   <ion-navbar>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Hello Ionic</ion-title>
+    <ion-title>Profile</ion-title>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
 
-  <h3>Welcome to your first Ionic app!</h3>
+  <ion-card>
 
-  <p>
-    This starter project is our way of helping you get a functional app running in record time.
-  </p>
-  <p>
-    Follow along on the tutorial section of the Ionic docs!
-  </p>
-  <p>
-    <button ion-button color="primary" menuToggle>Toggle Menu</button>
-  </p>
+    <ion-item>
+      <h2>{{currentUser.displayName}}</h2>
+      <p>{{currentUser.email}}</p>
+    </ion-item>
+
+    <img class="profile--img" [src]="currentUser.photoURL">
+
+    <ion-card-content>
+      <p>Logged with: {{currentUser.providerData[0].providerId}}</p>
+    </ion-card-content>
+
+  </ion-card>
 
 </ion-content>

@@ -67,15 +67,12 @@ const config = {
     ListPage,
     ProfileComponent,
     ProfileInfoComponent,
-<<<<<<< HEAD
     LogoComponent,
     AppStateComponent,
-    LoginComponent
-=======
+    LoginComponent,
     EventComponent,
     EventsInfoComponent,
     EventParticipantsComponent
->>>>>>> ee8414c9af373bc2d9936b3977a00fc2fc265f31
   ],
   providers: [
     StatusBar,
