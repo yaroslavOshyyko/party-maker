@@ -20,9 +20,7 @@ export class EventsMapPage {
             this.events = events;
             this.fb.searchEvents({
                 q:'Kyiv',
-                type: 'event',
-                since: '2017-05-13',
-                until: '2017-05-16'
+                type: 'event'
             }, 20).subscribe(
                 data => this.events = this.events.concat(data.map(event => {
                     if (event.place && event.place.location) {
