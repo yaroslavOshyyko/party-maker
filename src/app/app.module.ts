@@ -1,3 +1,4 @@
+import { ProfileComponent } from './../pages/profile/profile.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -10,8 +11,8 @@ import { EventsMapPage } from '../pages/events-map/events-map';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { SharedModule } from '../shared/shared.module';
 import { AgmCoreModule, AgmMap, AgmMarker, AgmCircle } from "@agm/core";
-// import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -19,15 +20,16 @@ import { AgmCoreModule, AgmMap, AgmMarker, AgmCircle } from "@agm/core";
     HelloIonicPage,
     ItemDetailsPage,
     EventsMapPage,
-    ListPage
+    ListPage,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    SharedModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyD1S_k3L8rHB30x74jllJZ4rGDG2V8dMGI'
     })
-    // SharedModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -35,7 +37,8 @@ import { AgmCoreModule, AgmMap, AgmMarker, AgmCircle } from "@agm/core";
     HelloIonicPage,
     ItemDetailsPage,
     EventsMapPage,
-    ListPage
+    ListPage,
+    ProfileComponent
   ],
   providers: [
     StatusBar,

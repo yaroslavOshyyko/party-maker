@@ -7,7 +7,6 @@ import { AuthService } from "./serivces/auth.service";
 @NgModule({
     declarations: [],
     imports: [ CommonModule ],
-    exports: [ SharedModule ],
     providers: [
         DatabaseService,
         FacebookAppService,
