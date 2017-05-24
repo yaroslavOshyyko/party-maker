@@ -3,6 +3,7 @@ import { DatabaseService } from '../../shared/serivces/database.service';
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { NavParams } from 'ionic-angular';
 import {EventsInfoComponent} from '../events-info/events-info.component';
+import {EventParticipantsComponent} from '../event-participants/event-participants.component';
 
 @Component({
   selector: 'app-event',
@@ -13,7 +14,8 @@ export class EventComponent implements OnInit {
   @ViewChild('message') public message;
   @Input() eventId: string;
   public messages;
-  info = EventsInfoComponent; 
+  info = EventsInfoComponent;
+  participants = EventParticipantsComponent;
 
   constructor(private dbService: DatabaseService, private auth: AngularFireAuth, private params: NavParams) { }
 
