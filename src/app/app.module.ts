@@ -17,6 +17,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { SharedModule } from '../shared/shared.module';
 import { AgmCoreModule, AgmMap, AgmMarker, AgmCircle } from "@agm/core";
 import { AngularFireModule } from "angularfire2";
+import { EventComponent } from '../components/event/event.component';
+import {EventsInfoComponent} from '../components/events-info/events-info.component';
+import {EventParticipantsComponent} from '../components/event-participants/event-participants.component';
 
 const config = {
   apiKey: "AIzaSyB8ZSdRKa-a93cJL3QfUldbD_OifHMC24U",
@@ -35,7 +38,10 @@ const config = {
     EventsMapPage,
     ListPage,
     ProfileComponent,
-    ProfileInfoComponent
+    ProfileInfoComponent,
+    EventComponent,
+    EventsInfoComponent,
+    EventParticipantsComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +60,10 @@ const config = {
     EventsMapPage,
     ListPage,
     ProfileComponent,
-    ProfileInfoComponent
+    ProfileInfoComponent,
+    EventComponent,
+    EventsInfoComponent,
+    EventParticipantsComponent
   ],
   providers: [
     StatusBar,

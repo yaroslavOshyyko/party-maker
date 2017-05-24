@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {FacebookAppService} from "./serivces/facebook.service";
 import { DatabaseService } from "./serivces/database.service";
 import { AuthService } from "./serivces/auth.service";
+import { AngularFireDatabase } from 'angularfire2/database';
 
 @NgModule({
     declarations: [],
@@ -10,7 +11,8 @@ import { AuthService } from "./serivces/auth.service";
     providers: [
         DatabaseService,
         FacebookAppService,
-        AuthService
+        AuthService,
+        AngularFireDatabase
     ],
     bootstrap: []
 })

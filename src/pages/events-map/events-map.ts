@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {NavController} from 'ionic-angular';
+import {EventComponent} from '../../components/event/event.component';
 
 @Component({
   selector: 'events-map',
@@ -12,6 +13,7 @@ export class EventsMapPage {
 
   constructor(private navController: NavController) {
     this.events = [{
+      $key: '234fdfad234',
       name: 'Event1',
       longtitude: 30.5238,
       latitude: 50.45466
@@ -19,6 +21,6 @@ export class EventsMapPage {
   }
 
   goToEvent (event) {
-    //this.navController.push(['/app', 'event', event.$key]);
+    this.navController.push(EventComponent, {id: event.$key});
   }
 }
