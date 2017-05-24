@@ -9,6 +9,9 @@ import { EventsMapPage } from '../events-map/events-map';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { AuthService} from '../../shared/serivces/auth.service';
+import {NavController} from 'ionic-angular';
+import {LoginComponent} from '../login/login.component';
 
 
 @Component({
@@ -26,7 +29,9 @@ export class AppStateComponent implements OnInit{
     public platform: Platform,
     public menu: MenuController,
     public statusBar: StatusBar,
-    public splashScreen: SplashScreen
+    public splashScreen: SplashScreen,
+    private authService: AuthService,
+    private navController: NavController
   ) {
 
     // set our app's pages
@@ -46,5 +51,11 @@ export class AppStateComponent implements OnInit{
     this.menu.close();
     // navigate to the new page if it is not the current page
     this.nav.setRoot(page.component);
+  }
+
+  onLogout () {
+    this.authService.logout()
+        .first()
+        .subscribe(() => this.navController.push(LoginComponent));
   }
 }
