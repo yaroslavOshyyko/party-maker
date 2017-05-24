@@ -1,3 +1,5 @@
+import { AppStateComponent } from './../app-state/app-state.component';
+import { NavController } from 'ionic-angular';
 import { AuthService } from './../../shared/serivces/auth.service';
 import { TwitterAuth } from './../../shared/serivces/authMethods';
 import { AngularFireAuth } from 'angularfire2/auth';
@@ -25,7 +27,7 @@ export class LoginComponent implements OnInit {
     private githubAuth: GithubAuth,
     private twitterAuth: TwitterAuth,
     private auth: AngularFireAuth,
-    // private router: Router,
+    private navCtrl: NavController,
     private authService: AuthService
   ) { }
 
@@ -37,13 +39,14 @@ export class LoginComponent implements OnInit {
       } else {
         this.isSignedIn = true;
         this.userData = data;
+        // this.navCtrl.push(AppStateComponent);
       }
     });
   }
 
   googleLogin() {
     this.googleAuth.login().then(() => {
-      // this.router.navigate(['/app/profile'])
+      this.navCtrl.push(AppStateComponent);
     });
   }
 
@@ -52,13 +55,13 @@ export class LoginComponent implements OnInit {
       this.authService.facebookToken = data.credential.accessToken;
       console.log(data);
       localStorage.setItem('facebookToken', this.authService.facebookToken);
-      // this.router.navigate(['/app/profile']);
+      this.navCtrl.push(AppStateComponent);
     });
   }
 
   githubLogin(){
     this.githubAuth.login().then(() => {
-      // this.router.navigate(['/app/profile']);
+      this.navCtrl.push(AppStateComponent);
     });
   }
 

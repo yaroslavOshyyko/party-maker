@@ -1,7 +1,7 @@
-import { ProfileComponent } from './../pages/profile/profile.component';
+import { LoginComponent } from './../pages/login/login.component';
 import { Component, ViewChild } from '@angular/core';
 
-import { Platform, MenuController, Nav } from 'ionic-angular';
+import { Platform, MenuController, Nav, NavController } from 'ionic-angular';
 
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ListPage } from '../pages/list/list';
@@ -15,11 +15,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  @ViewChild(Nav) nav: Nav;
+  @ViewChild(Nav) nav;
 
   // make HelloIonicPage the root (or first) page
-  rootPage = HelloIonicPage;
-  pages: Array<{title: string, component: any}>;
+  rootPage = LoginComponent;
+
+  // make HelloIonicPage the root (or first) page
 
   constructor(
     public platform: Platform,
@@ -28,14 +29,7 @@ export class MyApp {
     public splashScreen: SplashScreen
   ) {
     this.initializeApp();
-
-    // set our app's pages
-    this.pages = [
-      { title: 'Hello Ionic', component: HelloIonicPage },
-      { title: 'My First List', component: ListPage },
-      { title: 'Events map', component: EventsMapPage },
-      { title: 'My profile', component: ProfileComponent}
-    ];
+    
   }
 
   initializeApp() {
@@ -45,12 +39,5 @@ export class MyApp {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
-  }
-
-  openPage(page) {
-    // close the menu when clicking a link from the menu
-    this.menu.close();
-    // navigate to the new page if it is not the current page
-    this.nav.setRoot(page.component);
   }
 }

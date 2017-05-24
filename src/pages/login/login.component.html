@@ -1,10 +1,10 @@
 <div class="img">
-    <img src="/assets/123.png" (load)="loadImg($event)">
+    <!--<img src="/assets/123.png" (load)="loadImg($event)">-->
     <div class="container">
         <app-logo></app-logo>
         <h2>Login with</h2>
-        <button  md-raised-button class="google" (click)="googleLogin()">Google</button>
-        <button md-raised-button class="facebook" (click)="facebookLogin()">Facebook</button>
-        <button md-raised-button class="github" (click)="githubLogin()">Github</button>
+        <button  ion-button color="light" class="google" (click)="googleLogin()">Google</button>
+        <button ion-button color="light" class="facebook" (click)="facebookLogin()">Facebook</button>
+        <button ion-button color="light" class="github" (click)="githubLogin()">Github</button>
     </div>
 </div>

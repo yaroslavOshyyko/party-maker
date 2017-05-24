@@ -1,10 +1,13 @@
+import { LoginComponent } from './../pages/login/login.component';
+import { AppStateComponent } from './../pages/app-state/app-state.component';
+import { LogoComponent } from './../pages/logo/logo.component';
 import { FacebookService } from 'ng2-facebook-sdk';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { ProfileInfoComponent } from './../pages/profile-info/profile-info.component';
 import { ProfileComponent } from './../pages/profile/profile.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { IonicApp, IonicModule, IonicErrorHandler, NavController } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
@@ -35,7 +38,10 @@ const config = {
     EventsMapPage,
     ListPage,
     ProfileComponent,
-    ProfileInfoComponent
+    ProfileInfoComponent,
+    LogoComponent,
+    AppStateComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +60,10 @@ const config = {
     EventsMapPage,
     ListPage,
     ProfileComponent,
-    ProfileInfoComponent
+    ProfileInfoComponent,
+    LogoComponent,
+    AppStateComponent,
+    LoginComponent
   ],
   providers: [
     StatusBar,
