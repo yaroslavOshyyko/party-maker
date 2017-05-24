@@ -1,7 +1,7 @@
 
 <ion-tabs>
-    <ion-tab [root]="info" tabTitle="Tab 1" tabIcon="pulse"></ion-tab>
-    <ion-tab [root]="participants" tabTitle="Tab 2" tabIcon="pulse"></ion-tab>
+    <ion-tab [root]="info" tabTitle="Tab 1" tabIcon="pulse" [rootParams]="eventId"></ion-tab>
+    <ion-tab [root]="participants" tabTitle="Tab 2" tabIcon="pulse" [rootParams]="eventId"></ion-tab>
     <!--<ion-tab [root]="participants" tabTitle="Tab 3" tabIcon="pulse"></ion-tab>-->
 </ion-tabs>
 <!--<md-tab-group>
