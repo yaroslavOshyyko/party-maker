@@ -1,3 +1,5 @@
+import { ParticipatedComponent } from './../pages/participated/participated.component';
+import { OrganizedComponent } from './../pages/organized/organized.component';
 import { LoginComponent } from './../pages/login/login.component';
 import { AppStateComponent } from './../pages/app-state/app-state.component';
 import { LogoComponent } from './../pages/logo/logo.component';
@@ -47,7 +49,9 @@ const config = {
     LoginComponent,
     EventComponent,
     EventsInfoComponent,
-    EventParticipantsComponent
+    EventParticipantsComponent,
+    OrganizedComponent,
+    ParticipatedComponent
   ],
   imports: [
     BrowserModule,
@@ -72,7 +76,9 @@ const config = {
     LoginComponent,
     EventComponent,
     EventsInfoComponent,
-    EventParticipantsComponent
+    EventParticipantsComponent,
+    OrganizedComponent,
+    ParticipatedComponent
   ],
   providers: [
     StatusBar,
