@@ -1,3 +1,5 @@
+import { EventComponent } from './../../components/event/event.component';
+import { NavController } from 'ionic-angular';
 import { FacebookService } from 'ng2-facebook-sdk';
 import { AuthService } from './../../shared/serivces/auth.service';
 import { Router } from '@angular/router';
@@ -18,7 +20,8 @@ export class OrganizedComponent implements OnInit {
     private dbService: DatabaseService,
     private fbAuth: AngularFireAuth,
     private authService: AuthService,
-    private fb: FacebookService
+    private fb: FacebookService,
+    private navController: NavController
     ) { }
 
   ngOnInit() {
@@ -37,6 +40,6 @@ export class OrganizedComponent implements OnInit {
   }
 
   toEvent(event) {
-    // this.router.navigate(['/app', 'event', event.$key]);
+    this.navController.push(EventComponent, {id: event.$key});
   }
 }

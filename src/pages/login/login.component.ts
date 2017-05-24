@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
       } else {
         this.isSignedIn = true;
         this.userData = data;
-        // this.navCtrl.push(AppStateComponent);
+        this.navCtrl.push(AppStateComponent);
       }
     });
   }
