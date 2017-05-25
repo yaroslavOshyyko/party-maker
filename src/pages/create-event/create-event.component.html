@@ -11,22 +11,6 @@
 <form class="form" name='createEvent'>
 <ion-card *ngIf="!placeOnMapMode">
   <ion-list>
-  <!--<div class="image-container" (click)="fileLoader.click()">
-    <img  [src]="img || imageUrl || '/assets/default.jpg'" (load)="loadImg($event)">-->
-    <!--<canvas appCanvasImage
-            width="250"
-            [config]="{quality: 1, saveRatio: true, jpeg : true}"
-            [img]="file"
-            (onImageMinificationDone)="minifiedImage($event)"
-    ></canvas>-->
-    <!--<canvas appCanvasImage
-            width="50"
-            [config]="{quality: 1, saveRatio: true, jpeg : true}"
-            [img]="file"
-            (onImageMinificationDone)="minifiedImage($event)"
-    ></canvas>-->
-    <!--<input id="file" #fileLoader type="file" name="image" value="Upload an image" accept="image/jpeg,image/png" (change)="getFile($event)">
-  </div>-->
       <ion-item>
         <ion-label stacked>Name</ion-label>
         <ion-input name="name" [(ngModel)]="event.name"></ion-input>
@@ -34,6 +18,10 @@
       <ion-item>
         <ion-label stacked>Description</ion-label>
         <ion-input name="description" [(ngModel)]="event.description"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Image url</ion-label>
+        <ion-input name="image" [(ngModel)]="event.image"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label stacked>Price</ion-label>
