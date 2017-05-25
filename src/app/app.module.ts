@@ -1,3 +1,4 @@
+import { EventChatComponent } from './../components/event-chat/event-chat.component';
 import { ParticipatedComponent } from './../pages/participated/participated.component';
 import { OrganizedComponent } from './../pages/organized/organized.component';
 import { LoginComponent } from './../pages/login/login.component';
@@ -51,7 +52,8 @@ const config = {
     EventsInfoComponent,
     EventParticipantsComponent,
     OrganizedComponent,
-    ParticipatedComponent
+    ParticipatedComponent,
+    EventChatComponent
   ],
   imports: [
     BrowserModule,
@@ -78,7 +80,8 @@ const config = {
     EventsInfoComponent,
     EventParticipantsComponent,
     OrganizedComponent,
-    ParticipatedComponent
+    ParticipatedComponent,
+    EventChatComponent
   ],
   providers: [
     StatusBar,

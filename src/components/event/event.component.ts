@@ -1,3 +1,4 @@
+import { EventChatComponent } from './../event-chat/event-chat.component';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { DatabaseService } from '../../shared/serivces/database.service';
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
@@ -16,12 +17,14 @@ export class EventComponent implements OnInit {
   public messages;
   info = EventsInfoComponent;
   participants = EventParticipantsComponent;
+  chat = EventChatComponent;
 
   constructor(private dbService: DatabaseService, private auth: AngularFireAuth, private params: NavParams) { }
 
   ngOnInit() {
       if(this.params.get('id')){
-        this.eventId = this.params.get('id');;
+        this.eventId = this.params.get('id');
+        console.log(this.eventId);
       }
       // this.dbService.getList(`chats/${this.eventId}`, {
       //   orderByChild: 'timestamp'

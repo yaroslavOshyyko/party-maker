@@ -1,3 +1,4 @@
+import { NavParams } from 'ionic-angular';
 import { AuthService } from '../../shared/serivces/auth.service';
 import { FacebookService } from 'ng2-facebook-sdk';
 import { DatabaseService } from '../../shared/serivces/database.service';
@@ -20,31 +21,27 @@ export class EventParticipantsComponent implements OnInit {
   constructor(
     private dbService: DatabaseService, 
     private fb: FacebookService,
-    private authService: AuthService) { }
+    private authService: AuthService,
+    private navParams: NavParams) { }
 
   ngOnInit() {
-    // this.route.params.subscribe( params => {
-      
-    //   if(params['id']) {
-    //     this.eventId = params['id'];
-    //   }
-    //   if(+this.eventId){
-    //     this.fb.init({
-    //             appId: '1955507991402224',
-    //             version: 'v2.9'
-    //           });
-    //     this.isFacebookEvent = true;
-    //     this.fb.api(`/${this.eventId}/attending?access_token=${this.authService.facebookToken}`)
-    //       .then(data => {
-    //         this.facebookUsers = [];
-    //         this.facebookUsers.push(...data['data']);
-    //         console.log(this.facebookUsers);
-    //       });
-    //   }
-    //   this.dbService.getList(`eventsParticipants/${this.eventId}`).subscribe( users => {
-    //     this.users = users;
-    //   });
-    // });
+    this.eventId = this.navParams.data;
+    if(+this.eventId){
+      this.fb.init({
+              appId: '1955507991402224',
+              version: 'v2.9'
+            });
+      this.isFacebookEvent = true;
+      this.fb.api(`/${this.eventId}/attending?access_token=${this.authService.facebookToken}`)
+        .then(data => {
+          this.facebookUsers = [];
+          this.facebookUsers.push(...data['data']);
+          console.log(this.facebookUsers);
+        });
+    }
+    this.dbService.getList(`eventsParticipants/${this.eventId}`).subscribe( users => {
+      this.users = users;
+    });
   }
 
   redirectToFacebook(user){

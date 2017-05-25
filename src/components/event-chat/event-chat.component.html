@@ -1,0 +1,32 @@
+
+   
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Event chat</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+   <main #main>
+        <ion-card *ngFor="let message of messages" [class.mine]="message.owner">
+            <ion-avatar item-left>
+                <img [src]="message.userData.photoURL">
+            </ion-avatar>
+            <ion-card-header [ngClass]="{' align-right': message.owner}">
+                {{message.userData.displayName}} at {{message.sendAt}}
+            </ion-card-header>
+            <ion-card-content>
+                {{message.message}}
+            </ion-card-content>
+        </ion-card>
+    </main>
+    <footer>
+        <textarea placeholder="Type your message:" #message></textarea>
+      <button ion-button class="float-right" color="primary" [disabled]="message.value === ''" (click)="sendMessage(message.value)">Send</button>
+    </footer>
+
+</ion-content>

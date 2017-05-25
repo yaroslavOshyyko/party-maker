@@ -10,7 +10,21 @@
 
 <ion-content padding>
 
-  Event Info
+  <ion-card *ngIf="event">
+
+    <ion-item>
+      <h2>{{event.name || event.title}}</h2>
+
+    </ion-item>
+
+    <img class="profile--img" [src]="event.image || '/assets/default-event.png'">
+
+    <ion-card-content>
+      <p>{{event.description}}</p>
+    </ion-card-content>
+
+    <button ion-button class="example-margin" *ngIf="!isUserParticipated" (click)="participate()">Participate</button>
+  </ion-card>
 
 </ion-content>
 <!--<md-card class="example-card" *ngIf="event">

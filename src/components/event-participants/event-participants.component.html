@@ -9,7 +9,18 @@
 
 <ion-content padding>
 
-  Event participants
+  <ion-list *ngIf="facebookUsers">
+    <ion-title>Facebook users</ion-title>
+    <ion-item *ngFor="let user of facebookUsers" (click)="redirectToFacebook(user)">
+      <h2>{{user.name}}</h2>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngIf="users">
+    <ion-title>Party-maker users</ion-title>
+    <ion-item *ngFor="let user of users" (click)="redirectToFacebook(user)">
+      <h2>{{user.name}}</h2>
+    </ion-item>
+  </ion-list>
 
 </ion-content>
 <!--<md-list *ngIf="facebookUsers">
