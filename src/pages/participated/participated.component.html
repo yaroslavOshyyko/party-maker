@@ -33,18 +33,12 @@
 
   <ion-list>
     <ion-item *ngFor="let event of facebookEvents" (click)="toFacebookEvent(event)">
-      <ion-avatar item-left>
-        <img [src]="event.icon" (load)="loadImg($event)">
-      </ion-avatar>
       <h2>{{event.name}}</h2>
       <p>{{event.price}}</p>
     </ion-item>
   </ion-list>
   <ion-list>
     <ion-item *ngFor="let event of events" (click)="toEvent(event)">
-      <ion-avatar item-left>
-        <img [src]="event.icon" (load)="loadImg($event)">
-      </ion-avatar>
       <h2>{{event.name}}</h2>
       <p>{{event.price}}</p>
     </ion-item>

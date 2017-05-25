@@ -1,3 +1,4 @@
+import { EventsListComponent } from './../pages/events-list/events-list.component';
 import { SightsComponent } from './../pages/sights/sights.component';
 import { WikiArticleComponent } from './../pages/wiki-article/wiki-article.component';
 import { EventChatComponent } from './../components/event-chat/event-chat.component';
@@ -58,7 +59,8 @@ const config = {
     ParticipatedComponent,
     EventChatComponent,
     WikiArticleComponent,
-    SightsComponent
+    SightsComponent,
+    EventsListComponent
   ],
   imports: [
     BrowserModule,
@@ -89,7 +91,8 @@ const config = {
     ParticipatedComponent,
     EventChatComponent,
     WikiArticleComponent,
-    SightsComponent
+    SightsComponent,
+    EventsListComponent
   ],
   providers: [
     StatusBar,
