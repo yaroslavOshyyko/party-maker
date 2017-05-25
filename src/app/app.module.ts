@@ -1,3 +1,5 @@
+import { SightsComponent } from './../pages/sights/sights.component';
+import { WikiArticleComponent } from './../pages/wiki-article/wiki-article.component';
 import { EventChatComponent } from './../components/event-chat/event-chat.component';
 import { ParticipatedComponent } from './../pages/participated/participated.component';
 import { OrganizedComponent } from './../pages/organized/organized.component';
@@ -10,6 +12,7 @@ import { ProfileInfoComponent } from './../pages/profile-info/profile-info.compo
 import { ProfileComponent } from './../pages/profile/profile.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
+import { HttpModule } from '@angular/http';
 import { IonicApp, IonicModule, IonicErrorHandler, NavController } from 'ionic-angular';
 import { MyApp } from './app.component';
 
@@ -53,7 +56,9 @@ const config = {
     EventParticipantsComponent,
     OrganizedComponent,
     ParticipatedComponent,
-    EventChatComponent
+    EventChatComponent,
+    WikiArticleComponent,
+    SightsComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +67,8 @@ const config = {
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyD1S_k3L8rHB30x74jllJZ4rGDG2V8dMGI'
     }),
-    AngularFireModule.initializeApp(config)
+    AngularFireModule.initializeApp(config),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -81,7 +87,9 @@ const config = {
     EventParticipantsComponent,
     OrganizedComponent,
     ParticipatedComponent,
-    EventChatComponent
+    EventChatComponent,
+    WikiArticleComponent,
+    SightsComponent
   ],
   providers: [
     StatusBar,

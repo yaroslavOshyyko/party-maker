@@ -1,3 +1,4 @@
+import { SightsComponent } from './../sights/sights.component';
 import { ProfileComponent } from './../profile/profile.component';
 import { Component, ViewChild, OnInit } from '@angular/core';
 
@@ -38,7 +39,8 @@ export class AppStateComponent implements OnInit{
     this.pages = [
       { title: 'My First List', component: ListPage },
       { title: 'Events map', component: EventsMapPage },
-      { title: 'My profile', component: ProfileComponent}
+      { title: 'My profile', component: ProfileComponent },
+      { title: 'Sights', component: SightsComponent }
     ];
   }
 

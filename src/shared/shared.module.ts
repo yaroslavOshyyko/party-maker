@@ -22,7 +22,8 @@ import { AngularFireDatabase } from 'angularfire2/database';
         FacebookAppService,
         GithubAuth,
         TwitterAuth,
-        AngularFireDatabase
+        AngularFireDatabase,
+        PassDataService
     ],
     bootstrap: []
 })
