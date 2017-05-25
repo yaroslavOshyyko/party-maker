@@ -32,7 +32,7 @@ export class EventsMapPage {
       },
     ],
     price: 2,
-    radius: 1000
+    radius: 4000
   };
 
   constructor(private db: DatabaseService, private navController: NavController,

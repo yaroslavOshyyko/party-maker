@@ -9,7 +9,7 @@
 
 
 <ion-content padding>
-  <agm-map [latitude]="lat" [longitude]="lng" [zoom]="15">
+  <agm-map [latitude]="lat" [longitude]="lng" [zoom]="12">
     <agm-marker *ngFor="let event of filteredEvents" [latitude]="event.latitude" 
                 [longitude]="event.longtitude" [title]="event.name"
                 (markerClick)="goToEvent(event)">

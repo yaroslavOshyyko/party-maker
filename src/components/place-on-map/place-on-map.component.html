@@ -1,4 +1,4 @@
-<agm-map [latitude]="lat" [longitude]="lng" (mapClick)="onClick($event)">
+<agm-map [latitude]="lat" [longitude]="lng" (mapClick)="onClick($event)" [zoom]="12">
     <agm-marker *ngIf='event.latitude' [latitude]="event.latitude" 
                 [longitude]="event.longtitude" [label]="'M'">
     </agm-marker>
