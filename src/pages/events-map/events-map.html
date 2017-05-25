@@ -10,12 +10,17 @@
 
 <ion-content padding>
   <agm-map [latitude]="lat" [longitude]="lng" [zoom]="15">
-    <agm-marker *ngFor="let event of events" [latitude]="event.latitude" 
+    <agm-marker *ngFor="let event of filteredEvents" [latitude]="event.latitude" 
                 [longitude]="event.longtitude" [title]="event.name"
                 (markerClick)="goToEvent(event)">
     </agm-marker>
-    <!--<agm-marker [latitude]="lat" 
-                [longitude]="lng" [iconUrl]="'/assets/person.png'">
-    </agm-marker>-->
+    <agm-circle [latitude]="center.latitude" [longitude]="center.longtitude"
+                [radius]="options.radius"
+                [fillColor]="'red'"
+                [circleDraggable]="true"
+                [editable]="true"
+                (radiusChange)="onRadiusChange($event)"
+                (centerChange)="onCenterChange($event)">
+    </agm-circle>
   </agm-map>
 </ion-content>
