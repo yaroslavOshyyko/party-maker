@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { DatabaseService } from '../../shared/serivces/database.service';
 import {StorageService} from "../../shared/serivces/storage.service";
+import {NavController} from 'ionic-angular';
+import {EventComponent} from '../../components/event/event.component';
 
 @Component({
   selector: 'app-create-event',
@@ -19,7 +21,8 @@ export class CreateEventComponent {
   constructor(
       private auth: AngularFireAuth,
       private db: DatabaseService,
-      private storage: StorageService
+      private storage: StorageService,
+      private nav: NavController
   ) {
     db.getList('categories').first().subscribe(list => {
       this.categories = list.map(item => item.$value);
@@ -73,7 +76,7 @@ export class CreateEventComponent {
           savePath(n, path);
           if (loaded[0] && loaded[1]) {
             this.isLoading = false;
-            //this.router.navigate(['app', 'event', key])
+            this.nav.push(EventComponent, {id: key});
           }
         };
         console.log(key, this.file, this.smallFile);
