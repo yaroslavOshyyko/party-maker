@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Events</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<form class="form" name='createEvent'>
+<ion-card *ngIf="!placeOnMapMode">
+  <ion-list>
+  <!--<div class="image-container" (click)="fileLoader.click()">
+    <img  [src]="img || imageUrl || '/assets/default.jpg'" (load)="loadImg($event)">-->
+    <!--<canvas appCanvasImage
+            width="250"
+            [config]="{quality: 1, saveRatio: true, jpeg : true}"
+            [img]="file"
+            (onImageMinificationDone)="minifiedImage($event)"
+    ></canvas>-->
+    <!--<canvas appCanvasImage
+            width="50"
+            [config]="{quality: 1, saveRatio: true, jpeg : true}"
+            [img]="file"
+            (onImageMinificationDone)="minifiedImage($event)"
+    ></canvas>-->
+    <!--<input id="file" #fileLoader type="file" name="image" value="Upload an image" accept="image/jpeg,image/png" (change)="getFile($event)">
+  </div>-->
+      <ion-item>
+        <ion-label stacked>Name</ion-label>
+        <ion-input name="name" [(ngModel)]="event.name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Description</ion-label>
+        <ion-input name="description" [(ngModel)]="event.description"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Price</ion-label>
+        <ion-input name="price" mdInput [(ngModel)]="event.price"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Cathegory</ion-label>
+        <ion-select *ngIf="categories"
+               (change)="categoryChange($event.value)">
+          <ion-option *ngFor="let category of categories" [value]="category">{{category}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+      <button ion-button icon-left outline small (click)="onPlaceOnMap()">
+        <ion-icon name="add-circle"></ion-icon>
+        Add location
+      </button>
+      </ion-item>
+    <ion-item>
+      <button ion-button small>Cancel</button>
+      <button ion-button small (click)="onSave()">Save</button>
+    </ion-item>
+  </ion-list>
+</ion-card>
+</form>
+  <ion-card *ngIf="placeOnMapMode">
+    <app-place-on-map [event]="event"></app-place-on-map>
+    <button ion-button small (click)="onPlaceSave()">Save</button>
+  </ion-card>
+</ion-content>

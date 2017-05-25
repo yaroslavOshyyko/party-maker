@@ -9,6 +9,7 @@ import {FacebookAppService} from "./serivces/facebook.service";
 import { DatabaseService } from "./serivces/database.service";
 import { AuthService } from "./serivces/auth.service";
 import { AngularFireDatabase } from 'angularfire2/database';
+import {StorageService} from './serivces/storage.service';
 
 @NgModule({
     declarations: [],
@@ -23,7 +24,8 @@ import { AngularFireDatabase } from 'angularfire2/database';
         GithubAuth,
         TwitterAuth,
         AngularFireDatabase,
-        PassDataService
+        PassDataService,
+        StorageService
     ],
     bootstrap: []
 })

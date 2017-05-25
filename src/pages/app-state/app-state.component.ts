@@ -12,6 +12,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthService} from '../../shared/serivces/auth.service';
 import {NavController} from 'ionic-angular';
 import {LoginComponent} from '../login/login.component';
+import {CreateEventComponent} from '../create-event/create-event.component';
 
 
 @Component({
@@ -36,9 +37,10 @@ export class AppStateComponent implements OnInit{
 
     // set our app's pages
     this.pages = [
+      { title: 'My profile', component: ProfileComponent },
       { title: 'Events', component: EventsListComponent },
       { title: 'Events map', component: EventsMapPage },
-      { title: 'My profile', component: ProfileComponent },
+      { title: 'Create event', component: CreateEventComponent},
       { title: 'Sights', component: SightsComponent }
     ];
   }

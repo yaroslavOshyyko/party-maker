@@ -30,6 +30,8 @@ import { AngularFireModule } from "angularfire2";
 import { EventComponent } from '../components/event/event.component';
 import {EventsInfoComponent} from '../components/events-info/events-info.component';
 import {EventParticipantsComponent} from '../components/event-participants/event-participants.component';
+import {CreateEventComponent} from '../pages/create-event/create-event.component';
+import {PlaceOnMapComponent} from '../components/place-on-map/place-on-map.component';
 
 const config = {
   apiKey: "AIzaSyB8ZSdRKa-a93cJL3QfUldbD_OifHMC24U",
@@ -60,7 +62,9 @@ const config = {
     EventChatComponent,
     WikiArticleComponent,
     SightsComponent,
-    EventsListComponent
+    EventsListComponent,
+    CreateEventComponent,
+    PlaceOnMapComponent
   ],
   imports: [
     BrowserModule,
@@ -92,7 +96,9 @@ const config = {
     EventChatComponent,
     WikiArticleComponent,
     SightsComponent,
-    EventsListComponent
+    EventsListComponent,
+    CreateEventComponent,
+    PlaceOnMapComponent
   ],
   providers: [
     StatusBar,
@@ -104,7 +110,8 @@ const config = {
   exports: [
     AgmMap,
     AgmMarker,
-    AgmCircle
+    AgmCircle,
+    PlaceOnMapComponent
   ]
 })
 export class AppModule {}
