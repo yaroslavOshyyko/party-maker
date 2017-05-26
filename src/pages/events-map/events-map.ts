@@ -3,6 +3,8 @@ import {NavController} from 'ionic-angular';
 import {EventComponent} from '../../components/event/event.component';
 import { DatabaseService } from '../../shared/serivces/database.service';
 import {FacebookAppService} from "../../shared/serivces/facebook.service";
+import {Geolocation} from "@ionic-native/geolocation";
+import {Platform} from 'ionic-angular';
 
 @Component({
   selector: 'events-map',
@@ -35,14 +37,28 @@ export class EventsMapPage {
     radius: 4000
   };
 
-  constructor(private db: DatabaseService, private navController: NavController,
-              private fb: FacebookAppService) {
+  constructor(private db: DatabaseService, 
+              private navController: NavController,
+              private fb: FacebookAppService,
+              private platform: Platform,private geolocation: Geolocation
+    ) {
+      platform.ready().then(() => {
+          const watch = geolocation.watchPosition().subscribe(pos => {
+          if (pos.coords) {
+            this.lat = pos.coords.latitude;
+            this.lng = pos.coords.longitude;
+            this.center.latitude = this.lat;
+            this.center.longtitude = this.lng;
+            this.filterEvents();
+          }
+        });
+      });
     this.db.getList('categories')
       .subscribe((categories) => {
         this.options.category = categories;
       });
-      this.center.latitude = this.lat;
-      this.center.longtitude = this.lng;
+    this.center.latitude = this.lat;
+    this.center.longtitude = this.lng;
     this.db.getList('events')
         .subscribe(events => {
             this.events = events;

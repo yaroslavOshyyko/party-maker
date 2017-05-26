@@ -52,6 +52,10 @@
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/@ionic-native/core/-/core-3.7.0.tgz#951e7580f5a8a9b5811c0e443634fd91b034ed47"
 
+"@ionic-native/geolocation@^3.10.3":
+  version "3.10.3"
+  resolved "https://registry.yarnpkg.com/@ionic-native/geolocation/-/geolocation-3.10.3.tgz#943a0c15f8256505044a2d864b4d4d68dd1667db"
+
 "@ionic-native/splash-screen@3.7.0":
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/@ionic-native/splash-screen/-/splash-screen-3.7.0.tgz#56fa03cea4867887b68a230cdff33e99a82c6dcf"
