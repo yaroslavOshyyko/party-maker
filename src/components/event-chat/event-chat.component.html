@@ -12,7 +12,7 @@
 <ion-content padding>
 
    <main #main>
-        <ion-card *ngFor="let message of messages" [class.mine]="message.owner">
+        <ion-card class='message-card' *ngFor="let message of messages" [class.mine]="message.owner">
             <ion-item>
                 <ion-avatar  item-left>
                     <img [src]="message.userData.photoURL">
@@ -28,9 +28,9 @@
             </ion-card-content>
         </ion-card>
     </main>
-    <footer>
-        <textarea placeholder="Type your message:" #message></textarea>
-      <button ion-button class="float-right" color="primary" [disabled]="message.value === ''" (click)="sendMessage(message.value)">Send</button>
+    <footer class="send-message-block">
+        <ion-input class="chat-input" placeholder="Type your message:" #message></ion-input>
+      <button ion-button small [disabled]="message.value === ''" (click)="sendMessage(message.value)">Send</button>
     </footer>
     
 

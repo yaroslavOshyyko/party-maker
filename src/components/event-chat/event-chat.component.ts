@@ -34,18 +34,18 @@ export class EventChatComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    this.main['nativeElement'].scrollTop = this.main['nativeElement'].scrollHeight;
+    this.main.nativeElement.scrollTop = this.main.nativeElement.scrollHeight;
   }
 
   sendMessage(message) {
-    this.message['nativeElement'].value = '';
+    this.message.value = '';
     this.dbService.pushDataToList(`chats/${this.eventId}`, {
       userData: this.auth.auth.currentUser.providerData[0],
       uid: this.auth.auth.currentUser.uid,
       message: message,
       timestamp: Date.now()
     }).then(() => {
-      this.main['nativeElement'].scrollTop = this.main['nativeElement'].scrollHeight;
+      this.main.nativeElement.scrollTop = this.main.nativeElement.scrollHeight;
     })
   }
 
